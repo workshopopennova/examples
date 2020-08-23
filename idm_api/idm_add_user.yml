@@ -1,0 +1,18 @@
+---
+- name: Playbook to handle users
+  hosts: localhost
+  vars:
+    usuario: 
+    nombre: 
+    apellido: 
+    clave: 
+  tasks:
+  - name: Create user
+    ipauser:
+      ipaadmin_password: Passw0rd$
+      name: "{{ usuario }}"
+      first: "{{ nombre }}"
+      last: "{{ apellido }}"
+      password: "{{ clave }}"
+      update_password: on_create
+
